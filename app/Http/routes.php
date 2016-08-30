@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::auth();
+Route::get('/active', 'Auth\ActiveController@showEmailActivePage');
 
 Route::get('/home', 'HomeController@index');
