@@ -14,7 +14,7 @@ class ActiveUser
     public function handle($request, Closure $next)
     {
         if ($request->user()->active === 0) {
-            return redirect("/active");
+            return redirect("/active/page");
         }
         return $next($request);
     }

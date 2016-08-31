@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -23,4 +25,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function generateToken()
+    {
+        $now = time();
+        $token = bcrypt($this->name . $this->password . $this->email . $now);
+        $this->token = $token;
+        $this->save();
+    }
+
+    public function sendActiveEmail()
+    {
+        $user = $this;
+        Mail::queue('auth.emails.active', ['name' => $this->name, 'token' => $this->token],
+            function ($message) use ($user) {
+                $message->from(env('MAIL_USERNAME','ReviewZup'));
+                $message->to($user->email)->subject('Active your account');
+            }
+        );
+    }
 }
