@@ -16,5 +16,8 @@ Route::get('/', function () {
 });
 
 Route::auth();
+Route::get('/active/page', 'Auth\ActiveController@showEmailActivePage');
+Route::get('/active/link/{token}', 'Auth\ActiveController@activeAccount');
+Route::get('/active/email', 'Auth\ActiveController@sendActiveEmail');
 
 Route::get('/home', 'HomeController@index');
