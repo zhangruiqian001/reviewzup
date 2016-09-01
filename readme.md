@@ -3,4 +3,5 @@
 
 ##1.安装bower gulp
 ##2.bower install
-##3.gulp
+##3.npm install
+##4.gulp

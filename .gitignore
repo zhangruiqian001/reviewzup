@@ -6,3 +6,8 @@ Homestead.json
 /.idea
 /.vagrant
 .env
+/resources/vendor
+/public/css
+/public/fonts
+/public/images
+/public/js
