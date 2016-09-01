@@ -1,0 +1,6 @@
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+.rz_nav {padding:0;}
+@media (min-width: 768px) {
+    .rz_nav {padding:20px 0;}
+}
+.rz_mask {background-image: url(../images/bg.jpg); background-size: cover; min-height: 468px;}

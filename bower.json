@@ -1,0 +1,23 @@
+{
+  "name": "reviewzup",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zhangruiqian001/reviewzup",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "jquery#^1",
+    "jquery-ui": "~1.10.4",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0"
+  }
+}
