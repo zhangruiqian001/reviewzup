@@ -5,7 +5,8 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 class User extends Authenticatable
 {
     /**
@@ -29,7 +30,9 @@ class User extends Authenticatable
     public function generateToken()
     {
         $now = time();
-        $token = bcrypt($this->name . $this->password . $this->email . $now);
+        $content = $this->name . $this->email . $now;
+        Log::info('content '.$content);
+        $token = hash_hmac('sha256', $content, 'secret');
         $this->token = $token;
         $this->save();
     }
@@ -39,7 +42,7 @@ class User extends Authenticatable
         $user = $this;
         Mail::queue('auth.emails.active', ['name' => $this->name, 'token' => $this->token],
             function ($message) use ($user) {
-                $message->from(env('MAIL_USERNAME','ReviewZup'));
+                $message->from(env('MAIL_SENDER','ReviewZup@example.com'));
                 $message->to($user->email)->subject('Active your account');
             }
         );
