@@ -21,12 +21,10 @@
 </head>
 <body id="app-layout">
 
-    @include('layouts.nav')
-
     @yield('content')
 
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    <script src="{{ assert('js/site.js') }}"></script>
+    <script src="js/site.js"></script>
 </body>
 </html>
