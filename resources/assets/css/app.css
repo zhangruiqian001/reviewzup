@@ -4,3 +4,4 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
     .rz_nav {padding:20px 0;}
 }
 .rz_mask {background-image: url(../images/bg.jpg); background-size: cover; min-height: 468px;}
+.rz_reason_section {background-color: #F4F9FE;}
