@@ -47,7 +47,7 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel panel-default">
                         <div style="text-align: center;margin-top: 3rem">
-                            Sign UP
+                            Login
                         </div>
                         <div class="panel-body">
                             <form class="col-md-10 col-md-offset-1 form-horizontal" role="form" method="POST"
