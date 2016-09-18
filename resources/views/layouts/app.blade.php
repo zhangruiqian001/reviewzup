@@ -20,7 +20,7 @@
         }
     </style>
 </head>
-<body id="app-layout" data-spy="scroll" data-target="#app-navbar-collapse">
+<body id="app-layout">
 
     @yield('content')
 

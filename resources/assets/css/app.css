@@ -10,3 +10,6 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 .rz_color_section {background-color: #F4F9FE;}
 .main_color {color: #3283EB;}
 .rz_bottom_section {background-color: #3283EB;color:white;}
+.carousel-indicators li {width: auto;height: auto;text-indent: 0;color: #AAAAAA;}
+.carousel-indicators .active {width: auto;height: auto;color: #4a4a4a;}
+.navbar-nav > li > a {color:white;}

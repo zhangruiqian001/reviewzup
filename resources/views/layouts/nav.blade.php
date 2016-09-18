@@ -13,7 +13,10 @@
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#content">Home</a></li>
+                <li><a href="#content">Products</a></li>
+                <li><a href="#content">Blog</a></li>
+                <li><a href="#content">Portfolio</a></li>
+                <li><a href="#content">ABOUT</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
