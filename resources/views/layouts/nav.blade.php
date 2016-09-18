@@ -1,4 +1,4 @@
-<nav class="navbar navbar-custom navbar-fixed-top rz_nav">
+<nav class="navbar navbar-custom navbar-fixed-top rz_nav" id="nav">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -13,7 +13,7 @@
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/home') }}">Home</a></li>
+                <li><a href="#content">Home</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

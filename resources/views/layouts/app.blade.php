@@ -8,10 +8,11 @@
     <title>reviewzup</title>
 
     <link rel="stylesheet" href="{{ asset('css/site.css') }}" >
-
+    <script src="js/site.js"></script>
     <style>
         body {
             font-family: 'Lato';
+            position: relative;
         }
 
         .fa-btn {
@@ -19,12 +20,12 @@
         }
     </style>
 </head>
-<body id="app-layout">
+<body id="app-layout" data-spy="scroll" data-target="#app-navbar-collapse">
 
     @yield('content')
 
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    <script src="js/site.js"></script>
+
 </body>
 </html>
