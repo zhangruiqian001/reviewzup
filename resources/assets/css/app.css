@@ -3,5 +3,13 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 @media (min-width: 768px) {
     .rz_nav {padding:20px 0;}
 }
+.rz_nav_color {padding:0;background-color: #EEE;}
 .rz_mask {background-image: url(../images/bg.jpg); background-size: cover; min-height: 468px;}
-.rz_reason_section {background-color: #F4F9FE;}
+.rz_section {padding: 2rem 0;}
+.rz_section h2 {color:#3283EB;}
+.rz_color_section {background-color: #F4F9FE;}
+.main_color {color: #3283EB;}
+.rz_bottom_section {background-color: #3283EB;color:white;}
+.carousel-indicators li {width: auto;height: auto;text-indent: 0;color: #AAAAAA;}
+.carousel-indicators .active {width: auto;height: auto;color: #4a4a4a;}
+.navbar-nav > li > a {color:white;}

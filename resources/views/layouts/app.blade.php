@@ -8,10 +8,11 @@
     <title>reviewzup</title>
 
     <link rel="stylesheet" href="{{ asset('css/site.css') }}" >
-
+    <script src="js/site.js"></script>
     <style>
         body {
             font-family: 'Lato';
+            position: relative;
         }
 
         .fa-btn {
@@ -25,6 +26,6 @@
 
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    <script src="js/site.js"></script>
+
 </body>
 </html>
