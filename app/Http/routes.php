@@ -20,4 +20,14 @@ Route::get('/active/page', 'Auth\ActiveController@showEmailActivePage');
 Route::get('/active/link/{token}', 'Auth\ActiveController@activeAccount');
 Route::get('/active/email', 'Auth\ActiveController@sendActiveEmail');
 
+Route::get('/demand/url', ['middleware' => ['auth', 'auth.active'], function () {
+    return view('demand.demand-url');
+}]);
+
+Route::post('/demand/preview', [
+    'middleware' => ['auth', 'auth.active'],
+    'uses'=>'Demand\AppDemandController@preview'
+]);
+
+
 Route::get('/home', 'HomeController@index');
