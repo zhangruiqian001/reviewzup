@@ -2,33 +2,46 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+        <form action="" method="post" class="form-horizontal form" enctype="multipart/form-data" id="form1">
+        <div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th style="width:200px;">Country</th>
+                        <th style="width:200px;">Price</th>
+                        <th style="width:100px;">Number</th>
+                        <th style="width:100px;">Service charge</th>
+                        <th style="width:100px;">Subtotal</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-                    <div class="panel-body">
-                        <form class="col-md-10 col-md-offset-1 form-horizontal" role="form" method="POST"
-                              action="{{ url('/demand/post') }}">
-                            {{ csrf_field() }}
-
-                            <div class="form-control">
-                                <input type="text" name="info[appUrl][]" placeholder="appUrl">
-                                <input type="text" name="info[country][]" placeholder="country">
-                            </div>
-                            <div class="form-control">
-                                <input type="text" name="info[appUrl][]" placeholder="appUrl">
-                                <input type="text" name="info[country][]" placeholder="country">
-                            </div>
-                            <div class="form-control">
-                                <input type="text" name="info[appUrl][]" placeholder="appUrl">
-                                <input type="text" name="info[country][]" placeholder="country">
-                            </div>
-                            <button type="submit">提交</button>
-                        </form>
-                    </div>
-                </div>
+                    <tr>
+                        <td>USA</td>
+                        <td>$0</td>
+                        <td><input type="number" ></td>
+                        <td>$2.99</td>
+                        <td>$0</td>
+                    </tr>
+                    <tr>
+                        <td>China</td>
+                        <td>$0</td>
+                        <td><input type="number" ></td>
+                        <td>$2.99</td>
+                        <td>$0</td>
+                    </tr>
+                    <tr>
+                        <td>UK</td>
+                        <td>$0</td>
+                        <td><input type="number" ></td>
+                        <td>$2.99</td>
+                        <td>$0</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+        </form>
     </div>
 @endsection

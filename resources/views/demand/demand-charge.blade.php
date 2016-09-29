@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        <form action="" method="post" class="form-horizontal form" enctype="multipart/form-data" id="form1">
         <div class="panel panel-default">
             <div class="panel-body table-responsive">
                 <table class="table table-hover">
@@ -41,5 +42,6 @@
                 </table>
             </div>
         </div>
+        </form>
     </div>
 @endsection
