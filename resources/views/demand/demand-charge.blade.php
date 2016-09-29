@@ -1,4 +1,4 @@
-demand-post.blade.phpdemand-post.blade.php@extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
