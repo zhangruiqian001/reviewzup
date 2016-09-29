@@ -46,6 +46,7 @@ class AppDemandController extends Controller
 
     private function getAppInfo($url)
     {
+        //TODO 去itunes获取信息
         $info = [
             'info' => ['name' => 'whatsapp', 'icon' => 'abc', 'url' => $url],
             'items' => [
