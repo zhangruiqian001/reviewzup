@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Service\ItunesService;
 use Illuminate\Support\ServiceProvider;
+use Symfony\Component\EventDispatcher\Tests\Service;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind('ItunesService', function ($app){
+            return new ItunesService();
+        });
     }
 }

@@ -13,6 +13,8 @@ use Log;
 
 class AppDemandController extends Controller
 {
+
+
     //
 //    public function post(Request $request)
 //    {
@@ -47,8 +49,13 @@ class AppDemandController extends Controller
     private function getAppInfo($url)
     {
         //TODO 去itunes获取信息
+        $itunesService = App::make('ItunesService');
+        $result= $itunesService->getInfo($url);
+        Log::info("httpresult".$result);
+        $resultObj = json_decode($result);
+
         $info = [
-            'info' => ['name' => 'whatsapp', 'icon' => 'abc', 'url' => $url],
+            'info' => ['name' => 'aa', 'icon' => 'abc', 'url' => $url],
             'items' => [
                 ['country' => 'China', 'unitServicePrice' => 10, 'appPrice' => 1],
                 ['country' => 'USA', 'unitServicePrice' => 20, 'appPrice' => 2],
@@ -59,7 +66,8 @@ class AppDemandController extends Controller
     }
 
 
-    public function addOrder(Request $request){
+    public function prepareOrder(Request $request)
+    {
 
     }
 
