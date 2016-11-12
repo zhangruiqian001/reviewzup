@@ -10,7 +10,7 @@
                            <span>name:</span> <span>{{$data['info']['name']}}</span>
                         </div>
                         <div>
-                            <span>icon:</span> <span>{{$data['info']['icon']}}</span>
+                            <span>icon:</span> <span><img src ={{$data['info']['icon']}} /></span>
                         </div>
                         <div>
                             <span>url:</span> <span>{{$data['info']['url']}}</span>

@@ -13,29 +13,6 @@ use Log;
 
 class AppDemandController extends Controller
 {
-
-
-    //
-//    public function post(Request $request)
-//    {
-//        if (Auth::check()) {
-//            $input = $request->all();
-//            $info = $request->info;
-//            Log::info(json_encode($input));
-//
-//            $size = count($info['appUrl']);
-//            Log::info('size:' . $size);
-//            for ($i = 0; $i < $size; ++$i) {
-//                Log::info($i . ':' . $info['appUrl'][$i] . ':' . $info['country'][$i]);
-//                $demand = new AppDemand();
-//                $demand->user_id = $request->user()->id;
-//                $demand->app_url = $info['appUrl'][$i];
-//                $demand->country = $info['country'][$i];
-//                $demand->save();
-//            }
-//        }
-//    }
-
     public function preview(Request $request)
     {
         if (Auth::check()) {
@@ -48,14 +25,16 @@ class AppDemandController extends Controller
 
     private function getAppInfo($url)
     {
-        //TODO 去itunes获取信息
         $itunesService = App::make('ItunesService');
         $result= $itunesService->getInfo($url);
         Log::info("httpresult".$result);
-        $resultObj = json_decode($result);
-
+        $resultObj = json_decode($result,true);
+	Log::info($resultObj);	
+	$name = $resultObj['results'][0]['trackCensoredName'];
+	$sellerUrl = $resultObj['results'][0]['sellerUrl'];
+	$icon= $resultObj['results'][0]['artworkUrl100'];
         $info = [
-            'info' => ['name' => 'aa', 'icon' => 'abc', 'url' => $url],
+            'info' => ['name' => $name, 'icon' => $icon, 'url' => $sellerUrl],
             'items' => [
                 ['country' => 'China', 'unitServicePrice' => 10, 'appPrice' => 1],
                 ['country' => 'USA', 'unitServicePrice' => 20, 'appPrice' => 2],
