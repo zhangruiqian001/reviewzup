@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backapp')
 
 @section('content')
     <style>
@@ -12,7 +12,7 @@
         .step-item:nth-child(4) div{background-color: #FF0033;}
     </style>
     <div class="container container-section">
-        <div style="text-align: center;margin: 100px;">
+        <div style="text-align: center;margin: 80px 0 50px 0;">
             <div class="step-item">
                 <div class="cube">submit url</div>
                 <div class="circle">1</div>
