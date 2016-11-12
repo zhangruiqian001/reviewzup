@@ -13,7 +13,7 @@ class ItunesService {
     public function getInfo($url){
 	Log::info("appID:".$this->substr_between($url,"/id","?"));
         $client = new Client();
-        $res = $client->request('GET', 'https://itunes.apple.com/cn/lookup?id='.$this->substr_between($url,"/id","?"));
+        $res = $client->request('GET', 'https://itunes.apple.com/lookup?id='.$this->substr_between($url,"/id","?"));
         return $res->getBody()->getContents();
     }
 

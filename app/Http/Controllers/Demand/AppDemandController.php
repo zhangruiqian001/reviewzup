@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Demand;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Model\AppDemand;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Log;
 
 class AppDemandController extends Controller
@@ -26,28 +23,29 @@ class AppDemandController extends Controller
     private function getAppInfo($url)
     {
         $itunesService = App::make('ItunesService');
-        $result= $itunesService->getInfo($url);
-        Log::info("httpresult".$result);
-        $resultObj = json_decode($result,true);
-	Log::info($resultObj);	
-	$name = $resultObj['results'][0]['trackCensoredName'];
-	$sellerUrl = $resultObj['results'][0]['sellerUrl'];
-	$icon= $resultObj['results'][0]['artworkUrl100'];
+        $result = $itunesService->getInfo($url);
+        Log::info("httpresult" . $result);
+        $resultObj = json_decode($result, true);
+        Log::info($resultObj);
+        $name = $resultObj['results'][0]['trackCensoredName'];
+        $sellerUrl = "";
+//        $sellerUrl = $resultObj['results'][0]['sellerUrl'];
+        $icon = $resultObj['results'][0]['artworkUrl100'];
         $info = [
             'info' => ['name' => $name, 'icon' => $icon, 'url' => $sellerUrl],
-            'items' => [
-                ['country' => 'China', 'unitServicePrice' => 10, 'appPrice' => 1],
-                ['country' => 'USA', 'unitServicePrice' => 20, 'appPrice' => 2],
-                ['country' => 'UK', 'unitServicePrice' => 15, 'appPrice' => 1.4]
-            ]
+            'items' => App::make('PriceTableService')->getPriceTable()
         ];
         return $info;
     }
 
 
-    public function prepareOrder(Request $request)
+    public function createDemand(Request $request)
     {
-
+        $priceTable = App::make('PriceTableService')->getPriceTable();
+        foreach ($priceTable as $item) {
+            $value = $request->input($item['country']);
+            Log::info("############" . $value);
+        }
     }
 
 }

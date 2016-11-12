@@ -26,8 +26,13 @@ Route::get('/demand/url', ['middleware' => ['auth', 'auth.active'], function () 
 
 Route::post('/demand/preview', [
     'middleware' => ['auth', 'auth.active'],
-    'uses'=>'Demand\AppDemandController@preview'
+    'uses' => 'Demand\AppDemandController@preview'
 ]);
 
+Route::post('/demand/_create', [
+        'middleware' => ['auth', 'auth.active'],
+        'uses' => 'Demand\AppDemandController@createDemand'
+    ]
+);
 
 Route::get('/home', 'HomeController@index');
